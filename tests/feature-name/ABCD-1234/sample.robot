@@ -14,7 +14,7 @@ Trying to run from docker container
 
 *** Keywords ***
 Open in SauceLabs
-    [Arguments]         ${platform}=Windows 10     ${browserName}=chrome      ${BrowserVersion}=62.0
+    [Arguments]         ${platform}=Windows 10     ${browserName}=chrome      ${BrowserVersion}=78.0
     Open Browser        ${URL}
                                         ...  remote_url=http://%{SAUCE_USERNAME}:%{SAUCE_ACCESS_KEY}@ondemand.saucelabs.com:80/wd/hub
                                         ...  desired_capabilities=name:Simple Robot Test (${platform} - ${browserName}),platform:${platform},browserName:${browserName},version:${BrowserVersion}
