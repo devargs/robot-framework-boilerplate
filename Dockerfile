@@ -1,0 +1,21 @@
+FROM python:3
+
+# The root directory inside the docker container
+WORKDIR /usr/src/app
+
+# Link the local folder with the volume in the docker container
+VOLUME /usr/src/app
+
+# Get the latest version of pip installed
+RUN python -m pip install --upgrade pip
+
+# Copy the requirements file
+COPY requirements.txt ./
+
+# Install robot framework and dependencies
+RUN python3 -m pip install -r requirements.txt
+
+# Define your Saucelabs credentials (DON'T COMMIT YOUR OWN CREDENTIALS)
+ENV SAUCE_USERNAME=[your-saucelab-username]
+ENV SAUCE_ACCESS_KEY=[your-saucelab-accesskey]
+
