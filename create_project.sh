@@ -8,9 +8,9 @@ read username
 echo And your access key:
 read -s accesskey
 
-# Update the Dockerfile with the Saucelabs credentials (works only once)
-sed -i s/your-saucelab-username/$username/ Dockerfile
-sed -i s/your-saucelab-accesskey/$accesskey/ Dockerfile
+# Update the Dockerfile with the Saucelabs credentials
+sed -i s/SAUCE_USERNAME=.*/SAUCE_USERNAME=$username/ Dockerfile
+sed -i s/SAUCE_ACCESS_KEY=.*/SAUCE_ACCESS_KEY=$accesskey/ Dockerfile
 
 # Build the docker image
 docker build -t jnj-robot .
