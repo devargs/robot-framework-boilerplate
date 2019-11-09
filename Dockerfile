@@ -13,5 +13,5 @@ COPY requirements.txt ./
 RUN python3 -m pip install -r requirements.txt
 
 # Define your Saucelabs credentials (DON'T COMMIT YOUR OWN CREDENTIALS)
-ENV SAUCE_USERNAME=[your-saucelab-username]
-ENV SAUCE_ACCESS_KEY=[your-saucelab-accesskey]
+ENV SAUCE_USERNAME=your-saucelab-username
+ENV SAUCE_ACCESS_KEY=your-saucelab-accesskey
