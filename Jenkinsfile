@@ -1,9 +1,10 @@
 pipeline {
     agent { docker { image 'python:3' } }
     stages {
-        stage('build') {
+        stage('run_robot') {
             steps {
-                sh 'python --version'
+                //Build the docker image
+                sh 'docker build -t jnj-robot .'
             }
         }
     }
